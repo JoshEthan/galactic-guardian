@@ -7,5 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+            - name: Setup Zig
+              uses: goto-bus-stop/setup-zig@v2
+              with:
+                version: 0.7.0
             - name: Build Game
               run: zig build -Dtarget=wasm32-emscripten
